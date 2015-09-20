@@ -66,7 +66,7 @@ var Communication = function(){
   var sendTemperature = function(token){
     ds18b20.temperature(sensorIDs[0], function(err, value) {
       request.post({
-	url:"https://"+ IP +"/iot-hub-example/rest/temperature/add/" + value,
+	url: IP +"/iot-hub-example/rest/temperature/add/" + value,
 	  headers: { 'Authorization': 'Bearer '+token},
 	rejectUnauthorized : false},
 	  function(err,httpResponse,body){
