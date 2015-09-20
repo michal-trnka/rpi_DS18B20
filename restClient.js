@@ -4,7 +4,7 @@ var ds18b20 = require('ds18b20');
 var PASSWORD = 'tempSens';
 var USERNAME = 'temperature-sensor';
 var CLIENTID = 'iot';
-var IP = "147.32.83.195:8443";
+var IP = "https://147.32.83.195:8443";
 
 var sensorIDs = ds18b20.readSensorsIDs();
 
@@ -19,7 +19,7 @@ var Communication = function(){
   
   var getToken = function(successCallback){
     request.post({
-    url: "https://"+IP+"/auth/realms/iot/protocol/openid-connect/token",
+    url: IP+"/auth/realms/iot/protocol/openid-connect/token",
     form: {username:USERNAME,password:PASSWORD,client_id:CLIENTID,grant_type:'password'},
     rejectUnauthorized : false},
     function(err,httpResponse,body){
