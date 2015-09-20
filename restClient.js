@@ -37,7 +37,7 @@ var Communication = function(){
   
   var refreshToken = function(successCallback){
     request.post({
-    url: "https://"+IP+"/auth/realms/iot/protocol/openid-connect/token",
+    url: IP+"/auth/realms/iot/protocol/openid-connect/token",
     form: {refresh_token:refreshTokenHash,client_id:CLIENTID,grant_type:'refresh_token'},
     rejectUnauthorized : false},
     function(err,httpResponse,body){
