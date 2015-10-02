@@ -10,6 +10,6 @@ run the command:
 
 	node restClient.js
 
-in case you don't have needed hardware, run the command:
+in case you don't have required hardware, run the command:
 
 	node restClientMock.js
